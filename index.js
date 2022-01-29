@@ -119,7 +119,7 @@ Client.on('message', message => {
              //Messages Grades
 
     if(message.author.bot) return;
-     if (message.channel.id !== "926922189280792597" && message.channel.id !== "926922179893952532") {
+     if (message.channel.id !== "926922189280792597") {
          userData[sender.id].messagesSent++;
          fs.writeFile('Storage/userData.json', JSON.stringify(userData), (err) => {if (err) console.error(err);})
      } 
