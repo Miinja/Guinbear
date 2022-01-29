@@ -44,12 +44,12 @@ Client.on('message', message => {
 
     //  ALL STATS COMMANDS
 
-        //!mystats
+        //!stats
         if(message.content == prefix + "stats") {
             let Embed = new Discord.MessageEmbed()
             .setTitle("GuinBear Gang")
             .setColor('#FFFFFF')
-            .setDescription('You sent **' + userData[sender.id].messagesSent + '** messages !')
+            .setDescription('**' + `${message.author}` + '** sent **' + userData[sender.id].messagesSent + '** messages !')
             .setFooter(text="Bêta")
             .setTimestamp()
             message.channel.send(Embed)
@@ -57,7 +57,7 @@ Client.on('message', message => {
         if (!userData[sender.id]) userData[sender.id] = {
             messageSent: 0
             }
-        //!mystats
+        //!stats
 
 
 
