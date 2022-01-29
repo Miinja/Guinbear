@@ -5,7 +5,6 @@ const Client = new Discord.Client;
 const prefix = "!";
 Client.login(process.env.TOKEN);
 
-
 // Client Paramètre
 Client.on("ready", () => {
     console.log("## GuinBear_BOT by Miinja#3382. ##");
@@ -44,20 +43,21 @@ Client.on('message', message => {
 
     //  ALL STATS COMMANDS
 
-        //!stats
+        //!mystats
         if(message.content == prefix + "stats") {
             let Embed = new Discord.MessageEmbed()
             .setTitle("GuinBear Gang")
             .setColor('#FFFFFF')
             .setDescription('**' + `${message.author}` + '** sent **' + userData[sender.id].messagesSent + '** messages !')
-            .setFooter(text="Bêta")
+            .setThumbnail("https://media.giphy.com/media/Jv1Xu8EBCOynpoGBwd/giphy.gif")
+            .setFooter(text="NFT's Project")
             .setTimestamp()
             message.channel.send(Embed)
             }
         if (!userData[sender.id]) userData[sender.id] = {
             messageSent: 0
             }
-        //!stats
+        //!mystats
 
 
 
@@ -81,7 +81,8 @@ Client.on('message', message => {
             .setTitle("Leaderboard Of GuinBear Gang.")
             .setColor('#FFFFFF')
             .setDescription(Array.splice(0,10))
-            .setFooter(text="Bêta")
+            .setThumbnail("https://media.giphy.com/media/Jv1Xu8EBCOynpoGBwd/giphy.gif")
+            .setFooter(text="NFT's Project")
             .setTimestamp()
             message.channel.send(Embed);
         }
