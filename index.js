@@ -24,23 +24,6 @@ Client.on("ready", () => {
     });
 // Client Paramètre
 
-
-// help Commande
-Client.on("message", message => {
-    if(message.author.bot) return;
-
-        //!help
-        if(message.content == prefix + "help"){
-            let Embed = new Discord.MessageEmbed()
-            .setColor ('#FFFFFF')
-            .setTitle('GuinBear Gang')
-            .setDescription("**> Category Statistics**\n**📈 ➔ !mystats** \n *To see your number of messages !*");
-            message.channel.send(Embed)
-        }
-            
-});
-// help Commande
-
 // Message grade
 
 Client.on('message', message => {
@@ -61,8 +44,8 @@ Client.on('message', message => {
 
     //  ALL STATS COMMANDS
 
-        //!mystats
-        if(message.content == prefix + "mystats") {
+        //!stats
+        if(message.content == prefix + "stats") {
             let Embed = new Discord.MessageEmbed()
             .setTitle("GuinBear Gang")
             .setColor('#FFFFFF')
@@ -74,7 +57,7 @@ Client.on('message', message => {
         if (!userData[sender.id]) userData[sender.id] = {
             messageSent: 0
             }
-        //!mystats
+        //!stats
 
 
     //  ALL STATS COMMANDS
