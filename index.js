@@ -6,6 +6,7 @@ const prefix = "!";
 Client.login(process.env.TOKEN);
 
 
+
 // Client Paramètre
 Client.on("ready", () => {
     console.log("## GuinBear_BOT by Miinja#3382. ##");
@@ -33,7 +34,7 @@ Client.on("message", message => {
             let Embed = new Discord.MessageEmbed()
             .setColor ('#FFFFFF')
             .setTitle('GuinBear Gang')
-            .setDescription("**> Category Statistics**\n**🥇 ➔ !leaderboard** \n *To know the Top 10 User messages!*\n\n**📈 ➔ !mystats** \n *To see your number of messages !*\n\n**📊 ➔ !stats @user** \n *To see the number of messages from your friends/opponents!*");
+            .setDescription("**> Category Statistics**\n**📈 ➔ !mystats** \n *To see your number of messages !*");
             message.channel.send(Embed)
         }
             
@@ -75,65 +76,6 @@ Client.on('message', message => {
             }
         //!mystats
 
-        //!stats 
-        
-        if (message.content.startsWith("!stats")) {
-            if (message.mentions.users.first()) {
-            let Embed = new Discord.MessageEmbed()
-            .setTitle("GuinBear Gang")
-            .setColor('#FFFFFF')
-            .setDescription((Msender.tag) +' has sent **' + userData[Msender.id].messagesSent + '** messages !')
-            .setFooter(text="Bêta")
-            .setTimestamp()
-            message.channel.send(Embed)
-            }
-            else{
-                let Embed = new Discord.MessageEmbed()
-            .setTitle("GuinBear Gang")
-            .setColor('#FFFFFF')
-            .setDescription("❌ ➔  No one was mentioned !")
-            .setFooter(text="Bêta")
-            .setTimestamp()
-            message.channel.send(Embed)
-            }
-
-        }
-
-        //!stats
-
-        //ANTI FLOOD EMOJI
-        if(message.content.includes(':: :: :: ::')){
-            message.delete()
-            }
-
-        //ANTI FLOOD EMOJI
-
-        // !leaderboard
-        if(message.content == prefix + "leaderboard") {
-            let Array = []
-            message.guild.members.cache.forEach(function(member){
-            if(!userData[member.id])return;
-            const messages = userData[member.id].messagesSent
-            Array.push({name : member.user.username, msg : messages})
-        
-            });
-            Array.sort(function(b,a){
-            return a.msg- b.msg
-            })
-            
-            Array = Array.map((x,i)=>`#${i+1} |**  ${x.name}** with **${x.msg}** Messages. \n`);
-             
-            
-            let Embed = new Discord.MessageEmbed()
-            .setTitle("Leaderboard Of GuinBear Gang.")
-            .setColor('#FFFFFF')
-            .setDescription(Array.splice(0,10))
-            .setFooter(text="Bêta")
-            .setTimestamp()
-            message.channel.send(Embed);
-        }
-
-        // !leaderboard
 
     //  ALL STATS COMMANDS
 
