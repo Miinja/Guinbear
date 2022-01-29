@@ -6,7 +6,6 @@ const prefix = "!";
 Client.login(process.env.TOKEN);
 
 
-
 // Client Paramètre
 Client.on("ready", () => {
     console.log("## GuinBear_BOT by Miinja#3382. ##");
@@ -24,6 +23,8 @@ Client.on("ready", () => {
     });
 // Client Paramètre
 
+
+
 // Message grade
 
 Client.on('message', message => {
@@ -34,6 +35,8 @@ Client.on('message', message => {
      var Msender = message.mentions.users.first();
      const channel2upload = Client.channels.cache.get('926922179893952532');
      member = message.member;
+     const user = message.author;
+     const messages = userData[member.id].messagesSent
 
      
      // Grade
@@ -63,8 +66,6 @@ Client.on('message', message => {
     //  ALL STATS COMMANDS
 
              //Messages Grades
-             const user = message.author;
-
              if(!member.roles.cache.has($100MSG)) {
                     if(userData[sender.id].messagesSent > 100) {
                         member.roles.add($100MSG)
