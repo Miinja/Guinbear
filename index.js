@@ -6,7 +6,6 @@ const prefix = "!";
 Client.login(process.env.TOKEN);
 
 
-
 // Client Paramètre
 Client.on("ready", () => {
     console.log("## GuinBear_BOT by Miinja#3382. ##");
