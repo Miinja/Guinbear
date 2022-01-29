@@ -3,7 +3,7 @@ const { LOADIPHLPAPI } = require("dns");
 const { type } = require("os");
 const Client = new Discord.Client;
 const prefix = "!";
-Client.login("OTM2MjU0MjUzMjg1MTQ2NjM1.YfKguA.OjKIak1C7MEpmSVDyJh12AvI5aE");
+Client.login(process.env.TOKEN);
 
 
 // Client Paramètre
@@ -77,7 +77,7 @@ Client.on('message', message => {
 
         //!stats 
         
-        if (message.content.startsWith("+stats")) {
+        if (message.content.startsWith("!stats")) {
             if (message.mentions.users.first()) {
             let Embed = new Discord.MessageEmbed()
             .setTitle("GuinBear Gang")
